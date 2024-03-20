@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game Project: Harkamal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="js/wordsAndHints.js" defer></script> -->
+    <script src="js/hangman.js" defer></script>
+</head>
+
+<body>
+    <div id="bigContainer">
+        <div class="menuContainer"></div>
+    </div>
+    <div id="mainContainer">
+        <h3>Guess the word to make Tom Happy</h3>
+
+        <div id="tabletContainer">
+
+
+            <div class="hangmanContainer">
+                <img id="startImage" src="Images/tom-0.gif" alt="tomThinkingStart">
+
+
+            </div>
+            <div class="wordAndGuessBox">
+
+                <div class="words">
+
+                </div>
+                <p class="hints">
+
+                </p>
+                <h4 class="guesses">
+                    <i>Tries remaining : <b id="changeNumber"></b></i>
+                </h4>
+            </div>
+        </div>
+        <div class="hintBox">
+            <div class="buttonsBox" id="buttonsContainer">
+
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+    <div id="bigContainer2">
+        <div class="endMenuContainer">
+            <div class="lastImgContainer">
+                <h3 id="result" class="menuHeading"></h3>
+                <img class="lastImg" class="addAnimation" id="finalImg" src="Images/tom-sad-lose.gif" alt="sad tom gif">
+                <h3 id="finalWord" class="menuHeading"></h3>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
