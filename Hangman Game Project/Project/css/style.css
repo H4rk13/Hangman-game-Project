@@ -1,0 +1,520 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ranga:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lumanosimo&family=Ranga:wght@400;700&display=swap");
+
+/* Variable Declarations */
+/* Mixin for border-radius */
+/* Root Element */
+:root {
+  --border-background: $border-background;
+  --altbgcolor: $altbgcolor;
+  --backgroundColors: $backgroundColors;
+  --defaultFont: $defaultFont;
+  --hintFont: $hintFont;
+  --headingFont: $headingFont;
+  --colorful: $colorful;
+  --altFont: $altFont;
+  --firstMenuColor: $firstMenuColor;
+  --endGameMenu: $endGameMenu;
+  --containerBackground: $containerBackground;
+  --container2Background: $container2Background;
+  --hoverColor: $hoverColor;
+  --boxShadowsCyan: $boxShadowsCyan;
+  --boxShadowsBlue: $boxShadowsBlue;
+  --boxShadowsRed: $boxShadowsRed;
+  --textColorAfterHover: $textColorAfterHover;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #C1E1FF, #8AB6D6);
+}
+
+/* Main Container Styles */
+#bigContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #FFECB3;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Menu Container Styles */
+  /* Menu Heading Styles */
+}
+
+#bigContainer .menuContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #10c2a7;
+  width: 450px;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 35px;
+}
+
+#bigContainer .menuHeading {
+  font-size: 25px;
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.messageText {
+  padding: 15px 5px;
+  /* font-size: 14px; */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.menuButton {
+  font-size: 18px;
+  padding: 15px 30px;
+  margin: 15px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-family: var(--headingFont);
+  font-style: normal;
+}
+
+/* Menu Button Styles */
+.menuButton:hover {
+  background-color: #7810c2;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+  box-shadow: -2px -3px 5px #4000ff, 2px 3px 5px #4000ff;
+  color: aliceblue;
+  border-color: transparent;
+}
+
+/* Second Container Styles */
+#bigContainer2 {
+  width: 100%;
+  height: 100%;
+  background-color: #10c2a7;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* End Menu Container Styles */
+  /* Final Image Styles */
+  /* Final Word and Result Styles */
+  /* Goodbye Image Styles */
+}
+
+#bigContainer2 .endMenuContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 192, 203, 0.7607843137);
+  width: 450px;
+  height: 580px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 35px;
+}
+
+#bigContainer2 i {
+  color: #10a4c2;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+#bigContainer2 .lastImg {
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 5px;
+  animation: fadeIn 1s ease-in-out forwards;
+  box-shadow: -3px -4px 10px #10a4c2, 2px 3px 10px #4000ff;
+  color: aliceblue;
+}
+
+#bigContainer2 #finalWord,
+#bigContainer2 #result {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.byeImg {
+  width: 200px;
+  padding-top: 10px;
+  height: 200px;
+  border-radius: 25px;
+  animation: bounce 1s ease-in alternate infinite;
+}
+
+/* Main Container Styles */
+#mainContainer {
+  display: inline-flex;
+  width: 900px;
+  height: auto;
+  background: #fff;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 45px 25px;
+  border-radius: 10px;
+  margin: 20px;
+  background: linear-gradient(to right, #FFECB3, #FFDAB9, #FFC0CB);
+  display: none;
+  /* the main heading on top of the Container */
+}
+
+#mainContainer h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px 6px;
+  border-radius: 15px;
+  background-color: #FFDAB9;
+  box-shadow: -2px -5px 5px #c24510, 2px 5px 5px #10a4c2;
+}
+
+/* The container holding the .hangmanContainer and words */
+#tabletContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px;
+  /* Hangman Container Styles */
+  /* Start Image Styles */
+}
+
+#tabletContainer .hangmanContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 5px;
+  /* Styling for the image setting size and background shadow */
+}
+
+#tabletContainer .hangmanContainer img {
+  max-width: 250px;
+  max-height: 225px;
+  border-radius: 10px;
+  box-shadow: -1.5px -5px 5px #10a4c2, 1.5px 5px 5px #c24510;
+  border-radius: 10px;
+}
+
+#tabletContainer #startImage {
+  width: auto;
+  height: 190px;
+}
+
+#tabletContainer .wordAndGuessBox {
+  padding: 10px;
+}
+
+#tabletContainer .words {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #10a4c2;
+  font-weight: 800;
+}
+
+#tabletContainer .hints,
+#tabletContainer .guesses {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 5px;
+  font-family: "Ranga", cursive;
+  font-weight: 700;
+  font-style: normal;
+  text-wrap: wrap;
+}
+
+#tabletContainer .guesses i {
+  /* font-size: 14px; */
+  font-family: "IBM Plex Sans", sans-serif;
+  text-decoration: none;
+}
+
+.tries {
+  font-size: 18px;
+}
+
+/* Styling the text displayed when user press exit */
+/* some animation effects */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* style for the hint box,word and guesses made by the user. */
+.hintBox {
+  align-items: center;
+  justify-content: center;
+}
+
+/* the number of tries shown in different color */
+#changeNumber {
+  color: #c24510;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
+  text-wrap: wrap;
+  color: #c24510;
+}
+
+/* The container holding all the keyboard buttons */
+#buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 140px;
+  gap: 7px;
+  justify-content: center;
+}
+
+#buttonsContainer .buttons {
+  width: calc(9.5% - 2px);
+  padding: 10px;
+  border-radius: 15px;
+  border: solid 2px cadetblue;
+  background: aliceblue;
+  color: #10a4c2;
+  /* /* display: flex;  */
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+#buttonsContainer .buttons:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+  box-shadow: -1px -2px 2px #10a4c2, 1px 2px 5px #c24510;
+  color: aliceblue;
+  background: #10a4c2;
+  border: none;
+}
+
+#buttonsContainer .buttons:disabled {
+  color: aliceblue;
+  background: #c24510;
+  border: none;
+}
+
+#buttonsContainer .buttons:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Calculating the size of the button to fit in the space.Adding hover effects and style for disabled button. */
+.lastHeading {
+  font-size: 20px;
+}
+
+#tabletContainer .hints {
+  font-size: 22px;
+}
+
+/* For tablets */
+@media only screen and (max-width: 768px) {
+
+  /* #bigContainer {
+    display: none;
+  } */
+  /* #bigContainer2 {
+    display: flex;
+  } */
+  #startImage {
+    width: 240px;
+    height: 180px;
+  }
+
+  .menuContainer,
+  .endMenuContainer {
+    width: 80%;
+    height: 90%;
+    /* padding: 0; */
+    /* margin: 0; */
+  }
+
+  .menuHeading {
+    font-size: 20px;
+    font-family: "Lumanosimo", cursive;
+    font-weight: 700;
+  }
+
+  .lastHeading,
+  #finalWord,
+  #result {
+    font-size: 16px;
+  }
+
+  .menuButton {
+    font-size: 16px;
+    font-weight: 700;
+    /* padding: 1px 10px; */
+  }
+
+  .hangmanContainer img {
+    max-width: 300px;
+  }
+
+  #buttonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 140px;
+    gap: 7px;
+    justify-content: center;
+  }
+
+  .words,
+  .guesses,
+  .guesses i {
+    font-size: 14px;
+    /* background-color: #7810c2; */
+  }
+
+  .tries {
+    font-size: 14px;
+  }
+
+  i {
+    color: #10a4c2;
+    padding: 5px;
+    text-decoration: underline;
+  }
+
+  #tabletContainer .hints {
+    font-size: 16px;
+  }
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 480px) {
+
+  /* #bigContainer {
+    display: none;
+  } */
+  /* #bigContainer2 {
+    display: flex;
+  } */
+  #mainContainer {
+    display: none;
+    width: 90%;
+    padding: 25px;
+  }
+
+  #mainContainer #tabletContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #bigContainer2 .lastImg {
+    width: 250px;
+    height: 200px;
+  }
+
+  #finalWord,
+  #result {
+    font-size: 16px;
+    font-family: "Lumanosimo", cursive;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  i {
+    font-size: 18px;
+    color: var(--boxShadowsCyan);
+    padding: 2px;
+    text-decoration: underline;
+  }
+
+  .wordAndGuessBox {
+    font-size: 14px;
+    padding: 0px;
+  }
+
+  .endMenuContainer {
+    width: 90%;
+    height: 550px;
+    /* padding: 10px 5px; */
+    /* margin: 10px; */
+  }
+
+  .menuHeading {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-transform: capitalize;
+  }
+
+  .menuButton {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .hangmanContainer img {
+    max-width: 200px;
+  }
+
+  #buttonsContainer .buttons {
+    width: calc(8% - 2px);
+    padding: 2.5px;
+    font-size: 10px;
+  }
+
+  .tries {
+    font-size: 12px;
+  }
+
+  .menuContainer {
+    height: 250px;
+    width: 300px;
+  }
+
+  #tabletContainer .hints {
+    font-size: 14px;
+  }
+}
