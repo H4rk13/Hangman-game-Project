@@ -32,6 +32,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "IBM Plex Sans", sans-serif;
+  cursor: pointer;
 }
 
 body {
@@ -51,10 +52,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Menu Container Styles */
+  /* Menu Heading Styles */
 }
-
-/* Menu Container Styles */
-.menuContainer {
+#bigContainer .menuContainer {
   display: flex;
   flex-direction: column;
   background-color: #10c2a7;
@@ -68,13 +69,17 @@ body {
   width: 100%;
   border-radius: 35px;
 }
-
-/* Menu Heading Styles */
-.menuHeading {
+#bigContainer .menuHeading {
   font-size: 25px;
   font-family: "Work Sans", sans-serif;
   margin-bottom: 15px;
   text-transform: capitalize;
+}
+
+.messageText {
+  padding: 15px 5px;
+  /* font-size: 14px; */
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .menuButton {
@@ -107,10 +112,12 @@ body {
   justify-content: center;
   align-items: center;
   display: none;
+  /* End Menu Container Styles */
+  /* Final Image Styles */
+  /* Final Word and Result Styles */
+  /* Goodbye Image Styles */
 }
-
-/* End Menu Container Styles */
-.endMenuContainer {
+#bigContainer2 .endMenuContainer {
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 192, 203, 0.7607843137);
@@ -124,15 +131,12 @@ body {
   width: 100%;
   border-radius: 35px;
 }
-
-i {
+#bigContainer2 i {
   color: #10a4c2;
   padding: 5px;
   text-decoration: underline;
 }
-
-/* Final Image Styles */
-.lastImg {
+#bigContainer2 .lastImg {
   width: 300px;
   height: 200px;
   margin: 10px;
@@ -141,27 +145,19 @@ i {
   box-shadow: -3px -4px 10px #10a4c2, 2px 3px 10px #4000ff;
   color: aliceblue;
 }
-
-/* Final Word and Result Styles */
-#finalWord,
-#result {
+#bigContainer2 #finalWord,
+#bigContainer2 #result {
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
 }
 
-/* Goodbye Image Styles */
 .byeImg {
   width: 200px;
+  padding-top: 10px;
   height: 200px;
-  border-radius: 20px;
+  border-radius: 25px;
   animation: bounce 1s ease-in alternate infinite;
-}
-
-/* Start Image Styles */
-#startImage {
-  width: auto;
-  height: 190px;
 }
 
 /* Main Container Styles */
@@ -178,27 +174,8 @@ i {
   margin: 20px;
   background: linear-gradient(to right, #FFECB3, #FFDAB9, #FFC0CB);
   display: none;
+  /* the main heading on top of the Container */
 }
-
-/* Hangman Container Styles */
-.hangmanContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 5px;
-}
-
-/* Styling for the image setting size and background shadow */
-.hangmanContainer img {
-  max-width: 250px;
-  max-height: 225px;
-  border-radius: 10px;
-  box-shadow: -1.5px -5px 5px #10a4c2, 1.5px 5px 5px #c24510;
-  border-radius: 10px;
-}
-
-/* the main heading on top of the Container */
 #mainContainer h3 {
   margin-top: 10px;
   font-size: 16px;
@@ -216,15 +193,55 @@ i {
   align-items: center;
   gap: 30px;
   padding: 0 20px;
+  /* Hangman Container Styles */
+  /* Start Image Styles */
+}
+#tabletContainer .hangmanContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 5px;
+  /* Styling for the image setting size and background shadow */
+}
+#tabletContainer .hangmanContainer img {
+  max-width: 250px;
+  max-height: 225px;
+  border-radius: 10px;
+  box-shadow: -1.5px -5px 5px #10a4c2, 1.5px 5px 5px #c24510;
+  border-radius: 10px;
+}
+#tabletContainer #startImage {
+  width: auto;
+  height: 190px;
+}
+#tabletContainer .wordAndGuessBox {
+  padding: 10px;
+}
+#tabletContainer .words {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #10a4c2;
+  font-weight: 800;
+}
+#tabletContainer .hints,
+#tabletContainer .guesses {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 5px;
+  font-family: "Ranga", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+#tabletContainer .guesses i {
+  /* font-size: 14px; */
+  font-family: "IBM Plex Sans", sans-serif;
+  text-decoration: none;
 }
 
 /* Styling the text displayed when user press exit */
-.messageText {
-  padding: 15px 5px;
-  /* font-size: 14px; */
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
 /* some animation effects */
 @keyframes bounce {
   0%, 100% {
@@ -248,31 +265,6 @@ i {
   justify-content: center;
 }
 
-.words {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #10a4c2;
-  font-weight: 800;
-}
-
-.hints,
-.guesses {
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 5px;
-  font-family: "Ranga", cursive;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.guesses i {
-  /* font-size: 14px; */
-  font-family: "IBM Plex Sans", sans-serif;
-  text-decoration: none;
-}
-
 /* the number of tries shown in different color */
 #changeNumber {
   color: #c24510;
@@ -293,13 +285,7 @@ p {
   gap: 7px;
   justify-content: center;
 }
-
-.wordAndGuessBox {
-  padding: 10px;
-}
-
-/* Calculating the size of the button to fit in the space.Adding hover effects and style for disabled button. */
-.buttons {
+#buttonsContainer .buttons {
   width: calc(9.5% - 2px);
   padding: 10px;
   border-radius: 15px;
@@ -311,8 +297,7 @@ p {
   align-items: center;
   text-transform: uppercase;
 }
-
-.buttons:hover {
+#buttonsContainer .buttons:hover {
   transform: scale(1.1);
   transition: transform 0.5s ease-out;
   box-shadow: -1px -2px 2px #10a4c2, 1px 2px 5px #c24510;
@@ -320,18 +305,17 @@ p {
   background: #10a4c2;
   border: none;
 }
-
-.buttons:disabled {
+#buttonsContainer .buttons:disabled {
   color: aliceblue;
   background: #c24510;
   border: none;
 }
-
-.buttons:disabled:hover {
+#buttonsContainer .buttons:disabled:hover {
   transform: none;
   box-shadow: none;
 }
 
+/* Calculating the size of the button to fit in the space.Adding hover effects and style for disabled button. */
 .lastHeading {
   font-size: 20px;
 }
@@ -355,25 +339,30 @@ p {
     /* padding: 0; */
     /* margin: 0; */
   }
-  .menuHeading {
+  .menuContainer .menuHeading,
+  .endMenuContainer .menuHeading {
     font-size: 20px;
     font-family: "Lumanosimo", cursive;
     font-weight: 700;
   }
-  .lastHeading,
-  #finalWord,
-  #result {
+  .menuContainer .lastHeading,
+  .menuContainer #finalWord,
+  .menuContainer #result,
+  .endMenuContainer .lastHeading,
+  .endMenuContainer #finalWord,
+  .endMenuContainer #result {
     font-size: 16px;
+  }
+  .menuContainer .menuButton,
+  .endMenuContainer .menuButton {
+    font-size: 16px;
+    font-weight: 700;
+    /* padding: 1px 10px; */
   }
   i {
     color: #10a4c2;
     padding: 5px;
     text-decoration: underline;
-  }
-  .menuButton {
-    font-size: 16px;
-    font-weight: 700;
-    /* padding: 1px 10px; */
   }
   .hangmanContainer img {
     max-width: 300px;
@@ -408,6 +397,12 @@ p {
     width: 90%;
     padding: 25px;
   }
+  #mainContainer #tabletContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
   .lastImg {
     width: 250px;
     height: 200px;
@@ -424,12 +419,6 @@ p {
     color: var(--boxShadowsCyan);
     padding: 2px;
     text-decoration: underline;
-  }
-  #tabletContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
   }
   .wordAndGuessBox {
     font-size: 14px;
