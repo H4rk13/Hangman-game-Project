@@ -228,17 +228,22 @@ body {
 }
 #tabletContainer .hints,
 #tabletContainer .guesses {
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   margin-bottom: 5px;
   font-family: "Ranga", cursive;
   font-weight: 700;
   font-style: normal;
+  text-wrap: wrap;
 }
 #tabletContainer .guesses i {
   /* font-size: 14px; */
   font-family: "IBM Plex Sans", sans-serif;
   text-decoration: none;
+}
+
+.tries {
+  font-size: 18px;
 }
 
 /* Styling the text displayed when user press exit */
@@ -339,30 +344,20 @@ p {
     /* padding: 0; */
     /* margin: 0; */
   }
-  .menuContainer .menuHeading,
-  .endMenuContainer .menuHeading {
+  .menuHeading {
     font-size: 20px;
     font-family: "Lumanosimo", cursive;
     font-weight: 700;
   }
-  .menuContainer .lastHeading,
-  .menuContainer #finalWord,
-  .menuContainer #result,
-  .endMenuContainer .lastHeading,
-  .endMenuContainer #finalWord,
-  .endMenuContainer #result {
+  .lastHeading,
+  #finalWord,
+  #result {
     font-size: 16px;
   }
-  .menuContainer .menuButton,
-  .endMenuContainer .menuButton {
+  .menuButton {
     font-size: 16px;
     font-weight: 700;
     /* padding: 1px 10px; */
-  }
-  i {
-    color: #10a4c2;
-    padding: 5px;
-    text-decoration: underline;
   }
   .hangmanContainer img {
     max-width: 300px;
@@ -380,10 +375,20 @@ p {
     font-size: 14px;
     /* background-color: #7810c2; */
   }
-  .hints {
-    font-size: 18px;
+  .tries {
+    font-size: 14px;
   }
 }
+i {
+  color: #10a4c2;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+#tabletContainer .hints {
+  font-size: 16px;
+}
+
 /* For mobile devices */
 @media only screen and (max-width: 480px) {
   /* #bigContainer {
@@ -424,9 +429,6 @@ p {
     font-size: 14px;
     padding: 0px;
   }
-  .menuContainer {
-    height: 350px;
-  }
   .endMenuContainer {
     width: 90%;
     height: 550px;
@@ -446,10 +448,19 @@ p {
   .hangmanContainer img {
     max-width: 200px;
   }
-  .buttons {
-    width: calc(8.9473684211% - 2px);
-    padding: 3px;
-    font-size: 12px;
-    text-transform: uppercase;
+  #buttonsContainer .buttons {
+    width: calc(8% - 2px);
+    padding: 2.5px;
+    font-size: 10px;
   }
+  .tries {
+    font-size: 12px;
+  }
+  .menuContainer {
+    height: 250px;
+    width: 300px;
+  }
+}
+#tabletContainer .hints {
+  font-size: 14px;
 }

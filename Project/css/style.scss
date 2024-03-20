@@ -288,13 +288,15 @@ body {
 
     .hints,
     .guesses {
-        font-size: 18px;
+        font-size: 22px;
         text-align: center;
         margin-bottom: 5px;
         font-family: $hintFont;
         font-weight: 700;
         font-style: normal;
+        text-wrap: wrap;
     }
+
 
     .guesses i {
         /* font-size: 14px; */
@@ -302,9 +304,10 @@ body {
         text-decoration: none;
     }
 
+}
 
-
-
+.tries {
+    font-size: 18px;
 }
 
 /* Styling the text displayed when user press exit */
@@ -422,36 +425,27 @@ p {
 
         /* padding: 0; */
         /* margin: 0; */
-        .menuHeading {
-            font-size: 20px;
-            font-family: $headingFont;
-            font-weight: 700;
-        }
 
+    }
 
-        .lastHeading,
-        #finalWord,
-        #result {
-            font-size: 16px;
-        }
-
-        .menuButton {
-            font-size: 16px;
-            font-weight: 700;
-            /* padding: 1px 10px; */
-        }
+    .menuHeading {
+        font-size: 20px;
+        font-family: $headingFont;
+        font-weight: 700;
     }
 
 
-
-
-    i {
-        color: $boxShadowsCyan;
-        padding: 5px;
-        text-decoration: underline;
+    .lastHeading,
+    #finalWord,
+    #result {
+        font-size: 16px;
     }
 
-
+    .menuButton {
+        font-size: 16px;
+        font-weight: 700;
+        /* padding: 1px 10px; */
+    }
 
     .hangmanContainer img {
         max-width: 300px;
@@ -472,10 +466,23 @@ p {
         /* background-color: #7810c2; */
     }
 
-    .hints {
-        font-size: 18px;
+
+
+    .tries {
+        font-size: 14px;
     }
 }
+
+i {
+    color: $boxShadowsCyan;
+    padding: 5px;
+    text-decoration: underline;
+}
+
+#tabletContainer .hints {
+    font-size: 16px;
+}
+
 
 /* For mobile devices */
 @media only screen and (max-width: 480px) {
@@ -499,7 +506,6 @@ p {
             gap: 10px;
         }
     }
-
 
 
     .lastImg {
@@ -528,9 +534,6 @@ p {
         padding: 0px;
     }
 
-    .menuContainer {
-        height: 350px;
-    }
 
     .endMenuContainer {
         width: 90%;
@@ -555,10 +558,25 @@ p {
         max-width: 200px;
     }
 
-    .buttons {
-        width: calc(8.9473684211% - 2px);
-        padding: 3px;
-        font-size: 12px;
-        text-transform: uppercase;
+    #buttonsContainer .buttons {
+
+        width: calc(8% - 2px);
+        padding: 2.5px;
+        font-size: 10px;
     }
+
+    .tries {
+        font-size: 12px;
+    }
+
+    .menuContainer {
+        height: 250px;
+        width: 300px;
+    }
+
+}
+
+
+#tabletContainer .hints {
+    font-size: 14px;
 }
