@@ -169,4 +169,12 @@ img {
     nav ul li {
         margin-right: 10px;
     }
+    img {
+        max-width: 60%;
+        height: auto;
+        align-self: center;
+        align-items: center;
+        margin: 10px;
+        border-radius: 25px;
+    }
 }
