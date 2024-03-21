@@ -7,7 +7,7 @@
 /* Variable Declarations */
 $border-background: cadetblue;
 $altbgcolor: linear-gradient(to right, #C1E1FF, #8AB6D6);
-$backgroundColors: linear-gradient(to bottom, rgba(163, 204, 234, 0.4941176471), rgba(111, 208, 230, 0.6901960784));
+$backgroundColors: linear-gradient(to bottom, rgba(163, 204, 234, 0.50), rgba(111, 208, 230, 0.690));
 $colorful: linear-gradient(to right, #FFECB3, #FFDAB9, #FFC0CB);
 
 $firstMenuColor: #10c2a7;
@@ -33,6 +33,10 @@ $altFont: 'IBM Plex Sans', sans-serif;
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     border-radius: $radius;
+}
+
+@mixin box-shadow-mixin($color1, $color2) {
+    box-shadow: -2px -4px 5px $color1, 2px 4px 5px $color2;
 }
 
 /* Root Element */
@@ -135,8 +139,7 @@ body {
     background-color: $hoverColor;
     transform: scale(1.1);
     transition: transform 0.5s ease-out;
-    box-shadow: -2px -3px 5px $boxShadowsBlue, 2px 3px 5px $boxShadowsBlue;
-    color: $textColorAfterHover;
+    @include box-shadow-mixin($boxShadowsBlue, $boxShadowsRed);    color: $textColorAfterHover;
     border-color: transparent;
 }
 
@@ -233,8 +236,7 @@ body {
         padding: 8px 6px;
         border-radius: 15px;
         background-color: #FFDAB9;
-        box-shadow: -2px -5px 5px $boxShadowsRed, 2px 5px 5px $boxShadowsCyan;
-    }
+        @include box-shadow-mixin($boxShadowsBlue, $boxShadowsRed);    }
 
 }
 
