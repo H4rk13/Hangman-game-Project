@@ -315,13 +315,13 @@ function setupGame() {
         // if winCheck is true then the end screen picture is switched and text is displayed
         if (winCheck) {
             finalImg.src = `${imagePath}/tom-happy.gif`;
-            result.innerHTML = `You <i>Win </i>👍😁`;
+            result.innerHTML = `You <i>Win</i>👍😁`;
 
             finalWord.innerHTML = `You guessed it correctly.<br> The word is <i>${targetWord}.</i>`
 
         } else {
             finalImg.src = `${imagePath}/tom-sad-lose.gif`;
-            result.innerHTML = `You <i>Lose </i>👎😥`;
+            result.innerHTML = `You <i>Lose</i>👎😥`;
 
             finalWord.innerHTML = `You guessed it Wrong.<br> The word was <i>${targetWord}.</i>`
         }

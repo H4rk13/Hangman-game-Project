@@ -129,7 +129,6 @@ i {
   color: #10a4c2;
   padding: 5px;
   text-decoration: underline;
-  text-transform: capitalize;
 }
 
 /* Final Image Styles */
@@ -149,7 +148,6 @@ i {
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
-  text-transform: capitalize;
 }
 
 /* Goodbye Image Styles */
@@ -419,10 +417,11 @@ p {
     font-size: 16px;
     font-family: "Lumanosimo", cursive;
     text-align: center;
+    text-transform: capitalize;
   }
   i {
     font-size: 18px;
-    color: #10a4c2;
+    color: var(--boxShadowsCyan);
     padding: 2px;
     text-decoration: underline;
   }
