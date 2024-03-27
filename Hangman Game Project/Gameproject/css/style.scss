@@ -7,7 +7,7 @@
 /* Variable Declarations */
 $border-background: cadetblue;
 $altbgcolor: linear-gradient(to right, #C1E1FF, #8AB6D6);
-$backgroundColors: linear-gradient(to bottom, rgba(163, 204, 234, 0.4941176471), rgba(111, 208, 230, 0.6901960784));
+$backgroundColors: linear-gradient(to bottom, rgba(163, 204, 234, 0.50), rgba(111, 208, 230, 0.690));
 $colorful: linear-gradient(to right, #FFECB3, #FFDAB9, #FFC0CB);
 
 $firstMenuColor: #10c2a7;
@@ -33,6 +33,10 @@ $altFont: 'IBM Plex Sans', sans-serif;
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     border-radius: $radius;
+}
+
+@mixin box-shadow-mixin($color1, $color2) {
+    box-shadow: -2px -4px 5px $color1, 2px 4px 5px $color2;
 }
 
 /* Root Element */
@@ -63,6 +67,7 @@ $altFont: 'IBM Plex Sans', sans-serif;
     padding: 0;
     box-sizing: border-box;
     font-family: $altFont;
+    cursor: pointer;
 }
 
 body {
@@ -71,6 +76,11 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: $altbgcolor;
+}
+
+i {
+    text-transform: capitalize;
+
 }
 
 /* Main Container Styles */
@@ -82,31 +92,40 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* Menu Container Styles */
+    .menuContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: $firstMenuColor;
+        width: 450px;
+        height: 450px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: fixed;
+        max-width: 500px;
+        width: 90%;
+        @include border-radius(35px);
+
+    }
+
+    /* Menu Heading Styles */
+    .menuHeading {
+        font-size: 25px;
+        font-family: $defaultFont;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+    }
+
+
+
 }
 
-/* Menu Container Styles */
-.menuContainer {
-    display: flex;
-    flex-direction: column;
-    background-color: $firstMenuColor;
-    width: 450px;
-    height: 450px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: fixed;
-    max-width: 500px;
-    width: 100%;
-    @include border-radius(35px);
-
-}
-
-/* Menu Heading Styles */
-.menuHeading {
-    font-size: 25px;
-    font-family: $defaultFont;
-    margin-bottom: 15px;
-    text-transform: capitalize;
+.messageText {
+    padding: 15px 5px;
+    /* font-size: 14px; */
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .menuButton {
@@ -125,10 +144,11 @@ body {
     background-color: $hoverColor;
     transform: scale(1.1);
     transition: transform 0.5s ease-out;
-    box-shadow: -2px -3px 5px $boxShadowsBlue, 2px 3px 5px $boxShadowsBlue;
+    @include box-shadow-mixin($boxShadowsBlue, $boxShadowsRed);
     color: $textColorAfterHover;
     border-color: transparent;
 }
+
 
 /* Second Container Styles */
 #bigContainer2 {
@@ -140,65 +160,65 @@ body {
     justify-content: center;
     align-items: center;
     display: none;
+
+    /* End Menu Container Styles */
+    .endMenuContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: $endGameMenu;
+        width: 450px;
+        height: 580px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: fixed;
+        max-width: 500px;
+        width: 90%;
+        @include border-radius(35px);
+
+    }
+
+    i {
+        color: $boxShadowsCyan;
+        padding: 5px;
+        text-decoration: underline;
+        text-transform: capitalize;
+
+    }
+
+    /* Final Image Styles */
+    .lastImg {
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 5px;
+        animation: fadeIn 1s ease-in-out forwards;
+        box-shadow: -3px -4px 10px $boxShadowsCyan, 2px 3px 10px $boxShadowsBlue;
+        color: $textColorAfterHover;
+    }
+
+
+    /* Final Word and Result Styles */
+    #finalWord,
+    #result {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    /* Goodbye Image Styles */
+
+
 }
 
-/* End Menu Container Styles */
-.endMenuContainer {
-    display: flex;
-    flex-direction: column;
-    background-color: $endGameMenu;
-    width: 450px;
-    height: 580px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: fixed;
-    max-width: 500px;
-    width: 100%;
-    @include border-radius(35px);
-
-}
-
-i {
-    color: $boxShadowsCyan;
-    padding: 5px;
-    text-decoration: underline;
-    text-transform: capitalize;
-}
-
-/* Final Image Styles */
-.lastImg {
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-    border-radius: 5px;
-    animation: fadeIn 1s ease-in-out forwards;
-    box-shadow: -3px -4px 10px $boxShadowsCyan, 2px 3px 10px $boxShadowsBlue;
-    color: $textColorAfterHover;
-}
-
-/* Final Word and Result Styles */
-#finalWord,
-#result {
-    font-size: 20px;
-    font-weight: bold;
-    font-style: italic;
-    text-transform: capitalize;
-}
-
-/* Goodbye Image Styles */
 .byeImg {
     width: 200px;
+    padding-top: 10px;
     height: 200px;
-    border-radius: 20px;
+    border-radius: 25px;
     animation: bounce 1s ease-in alternate infinite;
 }
 
-/* Start Image Styles */
-#startImage {
-    width: auto;
-    height: 190px;
-}
 
 /* Main Container Styles */
 #mainContainer {
@@ -214,37 +234,23 @@ i {
     margin: 20px;
     background: $colorful;
     display: none;
+
+    /* the main heading on top of the Container */
+    h3 {
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 8px 6px;
+        border-radius: 15px;
+        background-color: #FFDAB9;
+        @include box-shadow-mixin($boxShadowsBlue, $boxShadowsRed);
+    }
+
 }
 
-/* Hangman Container Styles */
-.hangmanContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 5px;
-}
 
-/* Styling for the image setting size and background shadow */
-.hangmanContainer img {
-    max-width: 250px;
-    max-height: 225px;
-    border-radius: 10px;
-    box-shadow: -1.5px -5px 5px $boxShadowsCyan, 1.5px 5px 5px $boxShadowsRed;
-    border-radius: 10px;
-}
 
-/* the main heading on top of the Container */
-#mainContainer h3 {
-    margin-top: 10px;
-    font-size: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 8px 6px;
-    border-radius: 15px;
-    background-color: #FFDAB9;
-    box-shadow: -2px -5px 5px $boxShadowsRed, 2px 5px 5px $boxShadowsCyan;
-}
 
 /* The container holding the .hangmanContainer and words */
 #tabletContainer {
@@ -252,21 +258,77 @@ i {
     align-items: center;
     gap: 30px;
     padding: 0 20px;
+
+
+    /* Hangman Container Styles */
+    .hangmanContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 5px;
+
+        /* Styling for the image setting size and background shadow */
+        img {
+            max-width: 250px;
+            max-height: 225px;
+            border-radius: 10px;
+            box-shadow: -1.5px -5px 5px $boxShadowsCyan, 1.5px 5px 5px $boxShadowsRed;
+            border-radius: 10px;
+        }
+    }
+
+    /* Start Image Styles */
+    #startImage {
+        width: auto;
+        height: 190px;
+    }
+
+    .wordAndGuessBox {
+        padding: 10px;
+    }
+
+    .words {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: $boxShadowsCyan;
+        font-weight: 800;
+    }
+
+    .hints,
+    .guesses {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 5px;
+        font-family: $hintFont;
+        font-weight: 700;
+        font-style: normal;
+        text-wrap: wrap;
+    }
+
+
+    .guesses i {
+        /* font-size: 14px; */
+        font-family: $altFont;
+        text-decoration: none;
+    }
+
+}
+
+.tries {
+    font-size: 18px;
 }
 
 /* Styling the text displayed when user press exit */
-.messageText {
-    padding: 15px 5px;
-    /* font-size: 14px; */
-    animation: fadeIn 1s ease-in-out forwards;
-}
 
 /* some animation effects */
 @keyframes bounce {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform: translateX(5px);
     }
 
     50% {
@@ -279,6 +341,7 @@ i {
         opacity: 0;
     }
 
+    
     to {
         opacity: 1;
     }
@@ -288,31 +351,6 @@ i {
 .hintBox {
     align-items: center;
     justify-content: center;
-}
-
-.words {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: $boxShadowsCyan;
-    font-weight: 800;
-}
-
-.hints,
-.guesses {
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 5px;
-    font-family: $hintFont;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.guesses i {
-    /* font-size: 14px; */
-    font-family: $altFont;
-    text-decoration: none;
 }
 
 /* the number of tries shown in different color */
@@ -334,49 +372,59 @@ p {
     max-height: 140px;
     gap: 7px;
     justify-content: center;
+
+    .buttons {
+        width: calc(9.5% - 2px);
+        padding: 10px;
+        border-radius: 15px;
+        border: solid 2px cadetblue;
+        background: aliceblue;
+        color: $boxShadowsCyan;
+        /* /* display: flex;  */
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
+
+    .buttons:hover {
+        transform: scale(1.1);
+        transition: transform 0.5s ease-out;
+        box-shadow: -1px -2px 2px $boxShadowsCyan, 1px 2px 5px $boxShadowsRed;
+        color: aliceblue;
+        background: $boxShadowsCyan;
+        border: none;
+    }
+
+    .buttons:disabled {
+        color: $textColorAfterHover;
+        background: $boxShadowsRed;
+        border: none;
+    }
+
+    .buttons:disabled:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
 }
 
-.wordAndGuessBox {
-    padding: 10px;
-}
+
 
 /* Calculating the size of the button to fit in the space.Adding hover effects and style for disabled button. */
-.buttons {
-    width: calc(9.5% - 2px);
-    padding: 10px;
-    border-radius: 15px;
-    border: solid 2px cadetblue;
-    background: aliceblue;
-    color: $boxShadowsCyan;
-    /* /* display: flex;  */
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-}
-
-.buttons:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s ease-out;
-    box-shadow: -1px -2px 2px $boxShadowsCyan, 1px 2px 5px $boxShadowsRed;
-    color: aliceblue;
-    background: $boxShadowsCyan;
-    border: none;
-}
-
-.buttons:disabled {
-    color: $textColorAfterHover;
-    background: $boxShadowsRed;
-    border: none;
-}
-
-.buttons:disabled:hover {
-    transform: none;
-    box-shadow: none;
-}
 
 .lastHeading {
     font-size: 20px;
 }
+
+#tabletContainer .hints {
+    font-size: 22px;
+}
+
+
+
+
+
+
 
 /* For tablets */
 @media only screen and (max-width: 768px) {
@@ -396,8 +444,10 @@ p {
     .endMenuContainer {
         width: 80%;
         height: 90%;
+
         /* padding: 0; */
         /* margin: 0; */
+
     }
 
     .menuHeading {
@@ -406,17 +456,11 @@ p {
         font-weight: 700;
     }
 
+
     .lastHeading,
     #finalWord,
     #result {
         font-size: 16px;
-    }
-
-
-    i {
-        color: $boxShadowsCyan;
-        padding: 5px;
-        text-decoration: underline;
     }
 
     .menuButton {
@@ -444,10 +488,26 @@ p {
         /* background-color: #7810c2; */
     }
 
-    .hints {
-        font-size: 18px;
+
+
+    .tries {
+        font-size: 14px;
     }
+
+
+
+    i {
+        color: $boxShadowsCyan;
+        padding: 5px;
+        text-decoration: underline;
+    }
+
+    #tabletContainer .hints {
+        font-size: 16px;
+    }
+
 }
+
 
 /* For mobile devices */
 @media only screen and (max-width: 480px) {
@@ -462,11 +522,17 @@ p {
         display: none;
         width: 90%;
         padding: 25px;
+
+
+        #tabletContainer {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
     }
 
-
-
-    .lastImg {
+    #bigContainer2 .lastImg {
         width: 250px;
         height: 200px;
     }
@@ -476,32 +542,22 @@ p {
         font-size: 16px;
         font-family: $headingFont;
         text-align: center;
-
-
+        text-transform: capitalize;
     }
 
     i {
         font-size: 18px;
-        color: #10a4c2;
+        color: var(--boxShadowsCyan);
         padding: 2px;
         text-decoration: underline;
     }
 
-    #tabletContainer {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
 
     .wordAndGuessBox {
         font-size: 14px;
         padding: 0px;
     }
 
-    .menuContainer {
-        height: 350px;
-    }
 
     .endMenuContainer {
         width: 90%;
@@ -519,17 +575,30 @@ p {
 
     .menuButton {
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 700;
     }
 
     .hangmanContainer img {
         max-width: 200px;
     }
 
-    .buttons {
-        width: calc(8.9473684211% - 2px);
-        padding: 3px;
+    #buttonsContainer .buttons {
+
+        width: calc(8% - 2px);
+        padding: 2.5px;
+        font-size: 10px;
+    }
+
+    .tries {
         font-size: 12px;
-        text-transform: uppercase;
+    }
+
+    .menuContainer {
+        height: 250px;
+        width: 300px;
+    }
+
+    #tabletContainer .hints {
+        font-size: 14px;
     }
 }
